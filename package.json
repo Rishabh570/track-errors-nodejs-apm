@@ -1,0 +1,47 @@
+{
+  "name": "track-errors-nodejs-apm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --require './src/appsignal.cjs' server.js",
+    "dev": "source .dev.env && npx nodemon --require './src/appsignal.cjs' server.js",
+    "test": "mocha ./src/tests/*.spec.js --exit",
+    "test:watch": "mocha --watch ./src/tests/*.spec.js",
+    "coverage": "nyc --reporter=text npm test",
+    "format": "prettier --write \"./**/*.js\"",
+    "commit": "git add . && git-cz",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rishabh570/track-errors-nodejs-apm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rishabh570/track-errors-nodejs-apm/issues"
+  },
+  "homepage": "https://github.com/Rishabh570/track-errors-nodejs-apm#readme",
+  "dependencies": {
+    "@appsignal/nodejs": "^3.0.15",
+    "bunyan": "^1.8.15",
+    "express": "^4.18.2",
+    "mongoose": "^7.2.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "chai": "^4.3.7",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.0",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.8.8",
+    "rewire": "^6.0.0",
+    "sinon": "^15.1.0",
+    "sinon-chai": "^3.7.0",
+    "supertest": "^6.3.3"
+  }
+}
